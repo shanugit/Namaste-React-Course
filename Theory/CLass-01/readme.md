@@ -11,3 +11,13 @@ Framework is a collections of various libraries. [Read more](https://www.geeksfo
 Content Delivery Network is used to serve as cache to deliver static content over internet.
 
 ## 4. Why React is know as React?
+
+No idea yet.
+
+## 5. What is crossOrigin in script tag?
+
+## 6 Difference between React and ReactDOM
+
+## 7. Difference between react.production.js and react.development.js files via CDN.
+
+## 8. Difference between async and difer.
