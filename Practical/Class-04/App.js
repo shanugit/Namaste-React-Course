@@ -827,12 +827,12 @@ const RestaurentCard = ({
     </div>
   );
 };
-
+// we need to pass key in elements for virtual DOM and react reconciliation algo
 const Body = () => {
   return (
     <div className="restaurant-list">
       {restaurantLists.map((restaurant) => {
-        return <RestaurentCard {...restaurant.data} />;
+        return <RestaurentCard {...restaurant.data} key={restaurant.data.id} />;
       })}
       {/* <RestaurentCard {...restaurantLists[0].data} />
       <RestaurentCard {...restaurantLists[1].data} />
