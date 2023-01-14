@@ -22,6 +22,11 @@
         }
         // we need to import like the following way -
         import {name, printName} from "fileName"; // Named import
+        // or we can use * as import also
+        import * as obj from "fileName";
+
+        // we can import using both the system based on the module exports
+        import something, { someThingElse } from "filename";
    ```
 
 2. What is the importance of config.js file
