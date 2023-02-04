@@ -2,9 +2,9 @@ import { restaurantList } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 
-function searchRestaurant(searchInput, restaurants) {
-  console.log("check " + restaurants);
-  return restaurants.filter((item) => item?.data?.name.includes(searchInput));
+function filterData(searchInput, restaurants) {
+  console.log(restaurants);
+  return restaurants.filter((item) => item?.data?.name?.incudes(searchInput));
 }
 
 const Body = () => {
@@ -12,10 +12,19 @@ const Body = () => {
   let [searchInput, setSearchInput] = useState("");
 
   // empty dependency array => once after render it will get called
-
+  // [restaurants] => once after restaurants state changes
   useEffect(() => {
-    console.log("useEffect()");
-  }, []);
+    searchRestaurant();
+  }, [restaurants]);
+
+  async function searchRestaurant() {
+    const api = fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
+    );
+    let data = await api.then((data) => {
+      console.log(data);
+    });
+  }
 
   console.log("render");
   return (
@@ -34,7 +43,7 @@ const Body = () => {
         />
         <button
           onClick={() => {
-            const data = searchRestaurant(searchInput, restaurants);
+            const data = filterData(searchInput, restaurants);
             setRestaurants(data);
             // if (data.length > 0) {
             //   setRestaurants(data);
