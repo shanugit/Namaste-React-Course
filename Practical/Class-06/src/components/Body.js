@@ -1,4 +1,4 @@
-import { restaurantList } from "../config";
+import { restaurantList, SWIGGY_URL } from "../config";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 
@@ -15,15 +15,12 @@ const Body = () => {
   // [restaurants] => once after restaurants state changes
   useEffect(() => {
     searchRestaurant();
-  }, [restaurants]);
+  }, [searchInput]);
 
-  async function searchRestaurant() {
-    const api = fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
-    );
-    let data = await api.then((data) => {
-      console.log(data);
-    });
+  function searchRestaurant() {
+    fetch(SWIGGY_URL)
+      .then((response) => response.json())
+      .then((data) => setRestaurants(data.data.cards[2].data.data.cards));
   }
 
   console.log("render");
@@ -43,13 +40,12 @@ const Body = () => {
         />
         <button
           onClick={() => {
-            const data = filterData(searchInput, restaurants);
-            setRestaurants(data);
-            // if (data.length > 0) {
-            //   setRestaurants(data);
-            // } else {
-            //   setRestaurants({});
-            // }
+            const data = setRestaurants(data);
+            if (data.length > 0) {
+              setRestaurants(data);
+            } else {
+              setRestaurants({});
+            }
           }}
         >
           Search - {searchInput}

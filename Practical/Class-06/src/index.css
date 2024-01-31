@@ -38,4 +38,5 @@
 .restaurant-list {
   display: flex;
   margin: 10px;
+  padding: 1px;
 }

@@ -27,3 +27,8 @@
 
       We mostly use this useEffect() hook to make API call as we should not do API call on every time our component renders, as thats an expensive operation and if we do so then we are not optimizing our application. Thats why we have useEffect() hook to certain operation based on our rewuirement.
    ```
+
+Currently I am stuck at calling API from the javascript code due to the CORS settings in browser.
+Same API is providing data in postman tool. Which means the API is up and running. But Chrome has some issue. Lets find out what is that...
+
+Ok the problem of CROS is solved with a plugin for chrom and my app is now getting live data form swiggy api. Nice progress. Next steps..
