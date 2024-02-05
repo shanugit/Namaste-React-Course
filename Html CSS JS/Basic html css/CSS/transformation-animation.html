@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation and Transformation</title>
+    <style>
+      #box {
+        width: 250px;
+        height: 250px;
+        background-color: red;
+        border-radius: 10px;
+        transition: 1s ease-in-out;
+        display: flex;
+      }
+
+      #box:hover {
+        /* transform: translate(50px, 50px); this one move in right-bottom direction */
+        transform: rotateY(180deg);
+        /* transform: scale(2, 4); */
+      }
+      #flex-box {
+        height: 250px;
+        width: 100%;
+        background-color: aquamarine;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .flexbox-item {
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+        background-color: brown;
+        /* border: 2pc solid black; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <div id="flex-box">
+      <div class="flexbox-item">Item 1</div>
+      <div class="flexbox-item">Item 2</div>
+      <div class="flexbox-item">Item 3</div>
+      <div class="flexbox-item">Item 4</div>
+      <div class="flexbox-item">Item 5</div>
+      <div class="flexbox-item">Item 6</div>
+    </div>
+  </body>
+</html>
