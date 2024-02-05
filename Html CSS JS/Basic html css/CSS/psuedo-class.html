@@ -18,6 +18,19 @@
         width: 250px;
         background: radial-gradient(red, green, blue);
       }
+      #shadow {
+        text-shadow: 1px 1px 2px green;
+        color: white;
+      }
+      #shadow-glow {
+        text-shadow: 0 0 4px red;
+      }
+      #box-shadow {
+        width: 250px;
+        height: 250px;
+        box-shadow: 12px 12px 6px 6px grey;
+        background-color: aliceblue;
+      }
     </style>
   </head>
   <body>
@@ -28,8 +41,16 @@
       <h2>This is another tag inside div1 tag</h2>
     </div>
 
-    <div id="gradient"></div>
+    <div id="text-shadow">
+      <h2></h2>
+      <h2 id="shadow">This text will have shadow</h2>
+      <h2 id="shadow-glow">This text will glow</h2>
+    </div>
 
-    <div id="radioGradient"></div>
+    <div id="box-shadow"></div>
+
+    <!-- <div id="gradient"></div> -->
+
+    <!-- <div id="radioGradient"></div> -->
   </body>
 </html>
