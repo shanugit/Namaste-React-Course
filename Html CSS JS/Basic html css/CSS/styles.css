@@ -1,0 +1,18 @@
+#body {
+  background-color: white;
+}
+
+#header {
+  background-color: aquamarine;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+}
+.header-items {
+  position: absolute;
+  margin: 2px;
+  padding: 5px;
+  text-decoration: underline;
+  display: flex;
+  /* text-align: center; */
+}
