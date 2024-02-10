@@ -1,0 +1,60 @@
+#header-section {
+  height: 50px;
+  width: 100%;
+  background-color: crimson;
+  margin: 15px;
+}
+
+#aboutme-section {
+  height: 250px;
+  width: 100%;
+  background-color: aquamarine;
+  margin: 15px;
+}
+
+#projects-section {
+  height: 250px;
+  width: 100%;
+  background-color: burlywood;
+  margin: 15px;
+}
+
+#contactme-section {
+  height: 200px;
+  width: 100%;
+  background-color: darkolivegreen;
+  margin: 15px;
+}
+
+#footer-section {
+  height: 100px;
+  width: 100%;
+  background-color: crimson;
+  margin: 15px;
+}
+
+#header-content-details {
+  padding: 1px;
+}
+
+#nav-items {
+  list-style-type: none;
+  display: flex;
+  /* text-align: center; */
+  text-decoration: underline;
+  position: relative;
+  /* padding: 44px; */
+  margin: 10px;
+}
+
+#aboutme {
+  margin: 15px;
+}
+
+#projects {
+  margin: 15px;
+}
+
+#contactme {
+  margin: 15px;
+}
