@@ -33,7 +33,9 @@
 }
 
 #card {
+  background-color: azure;
   width: 150px;
+  height: 300px;
   border: 1px solid black;
   padding: 10px;
   margin: 5px;
@@ -45,6 +47,17 @@
 
 #restaurant-list {
   display: flex;
-  /* margin: 5px; */
-  padding: 10px;
+  padding: 5px;
+}
+
+#input-box {
+  padding-left: 10px;
+}
+
+#get-input {
+  background-color: beige;
+}
+
+#search-btn {
+  background-color: cornflowerblue;
 }
