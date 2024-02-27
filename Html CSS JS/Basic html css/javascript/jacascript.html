@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Javascript</title>
     <script>
-      alert("Head part rendering");
+      // alert("Head part rendering");
     </script>
   </head>
   <body>
     <p id="welcome">Hello World</p>
     <script type="text/javascript">
-      alert("Body rendering");
-      document.getElementById("welcome").innerHTML = "Suman Das";
+      // alert("Body rendering");
+      const changeName = () => {
+        // document.getElementById("welcome").innerHTML = "Suman Das";
+        alert("Button clicked");
+        document.getElementById("welcome").innerHTML = "Button clicked here";
+      };
     </script>
-    <button onClick="alert('Hello Suman')">Submit</button>
+    <button onClick="changeName()">Submit</button>
   </body>
 </html>
