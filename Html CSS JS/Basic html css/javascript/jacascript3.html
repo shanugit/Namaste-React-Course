@@ -11,7 +11,23 @@
       <button onclick="showSearchInput()">Search Box</button>
       <p id="search">Search Word -</p>
     </div>
+
+    <div>
+      <input placeholder="Guess Word here" id="guess-input" />
+      <button onClick="checkWord()">Check Guess</button>
+    </div>
     <script>
+      const foodArray = ["Pizza", "Biryani", "Burger"];
+      let getRandomNumber = Math.floor(Math.random() * 3);
+      function checkWord() {
+        let userInput = document.getElementById("guess-input").value;
+        console.log(userInput, foodArray[getRandomNumber]);
+        if (userInput === foodArray[getRandomNumber]) {
+          alert(`You got the Food. Cheers!!`);
+        } else {
+          alert(`Nope you missed`);
+        }
+      }
       function showSearchInput() {
         let getInput = document.getElementById("enter-input").value;
         console.log(getInput);
