@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reaction Tester</title>
+    <link rel="stylesheet" href="./Style.css" />
+  </head>
+  <body>
+    <div>
+      <h1>Lets check how quick you can click the bellow shape</h1>
+      <p id="log-reaction-time"></p>
+      <div id="shape" onClick="changeColor()"></div>
+    </div>
+    <script>
+      let firstTime = new Date().getTime();
+      function changeColor() {
+        let clickTime = new Date().getTime();
+        let reactionTime = (clickTime - firstTime) / 1000;
+        firstTime = clickTime;
+        document.getElementById("log-reaction-time").innerHTML =
+          "Your reaction time <b>" + reactionTime + " seconds </b>";
+        let red = getRandom(256);
+        let green = getRandom(256);
+        let blue = getRandom(256);
+        let getElement = document.getElementById("shape");
+        getElement.style.backgroundColor =
+          "rgb(" + red + ", " + green + ", " + blue + ")";
+        getElement.style.margin = "" + getRandom(100) + "%";
+        getElement.style.borderRadius = getRandom(50) + "%";
+      }
+      function getRandom(num) {
+        return Math.trunc(Math.random() * num);
+      }
+    </script>
+  </body>
+</html>
