@@ -6,6 +6,7 @@
     <title>Javascript</title>
   </head>
   <body>
+    <h1>Intracting with DOM element using Javascript</h1>
     <div>
       <input placeholder="Enter items" id="enter-input" />
       <button onclick="showSearchInput()">Search Box</button>
@@ -21,6 +22,18 @@
       <input placeholder="enter guess" id="finger-input" />
       <button onClick="checkGuess()">Guess how many fingers?</button>
       <section id="guess-result"></section>
+    </div>
+    <div id="display-tweets"></div>
+    <div>
+      <select id="select-state" aria-placeholder="" onchange="showSelection()">
+        <option>--</option>
+        <option>West Bengal</option>
+        <option>Karnataka</option>
+        <option>Odisha</option>
+        <option>Bihar</option>
+        <option>Gujrath</option>
+      </select>
+      <p id="show-selected-item"></p>
     </div>
     <script>
       const foodArray = ["Pizza", "Biryani", "Burger"];
@@ -50,6 +63,21 @@
         } else {
           displayOutput.innerHTML = `Nope incorrect :(`;
         }
+      }
+      (function showTweets() {
+        let getElement = document.getElementById("display-tweets");
+        const tweets = ["Good Morning Developers", "How are you all"];
+        let tweetStr = "";
+        for (let tweet of tweets) tweetStr += "<li>" + tweet + "</li>";
+        getElement.innerHTML = "<ul>" + tweetStr + "</ul>";
+      })();
+      function showSelection() {
+        let getElement = document.getElementById("show-selected-item");
+        let getItem = document.getElementById("select-state").value;
+        getElement.innerHTML =
+          "You state is <span style='color: green;'> <b>" +
+          getItem +
+          "</b> </span>";
       }
     </script>
   </body>
