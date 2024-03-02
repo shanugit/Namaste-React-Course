@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+    <script>
+      // alert("Head part rendering");
+    </script>
+  </head>
+  <body>
+    <p id="welcome">Hello World</p>
+    <button onClick="changeName()">Submit</button>
+
+    <p id="second-p">
+      Hello there, its anothoer p tag for dynamic content change
+    </p>
+    <button onClick="changeP()">Change Content</button>
+    <script type="text/javascript">
+      // alert("Body rendering");
+      // here we are not replacing content but also append content
+      function changeP() {
+        let getStr = document.getElementById("second-p").innerHTML;
+        document.getElementById("second-p").innerHTML =
+          getStr + " Some more test added";
+      }
+      const changeName = () => {
+        // document.getElementById("welcome").innerHTML = "Suman Das";
+        alert("Button clicked");
+        document.getElementById("welcome").innerHTML = "Button clicked here";
+      };
+      function loadElement() {
+        let generateTxt = document.createElement("p");
+        let newContent = document.createTextNode("Greeting to js from html");
+        generateTxt.appendChild(newContent);
+        document.body.insertBefore(generateTxt);
+      }
+      document.body.onload = loadElement();
+    </script>
+
+    <p id="aboutSuman">
+      I am trying to learn Frontend Development with React Library
+    </p>
+    <button onClick="changeColor()" style="background-color: aqua">
+      Progress
+    </button>
+    <script>
+      function changeColor() {
+        document.getElementById("aboutSuman").style.color = "green";
+      }
+    </script>
+  </body>
+</html>

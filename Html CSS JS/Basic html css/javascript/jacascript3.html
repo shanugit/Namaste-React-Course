@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+  </head>
+  <body>
+    <h1>Intracting with DOM element using Javascript</h1>
+    <div>
+      <input placeholder="Enter items" id="enter-input" />
+      <button onclick="showSearchInput()">Search Box</button>
+      <p id="search">Search Word -</p>
+    </div>
+
+    <div>
+      <input placeholder="Guess Word here" id="guess-input" />
+      <button onClick="checkWord()" style="margin: 10px">Check Guess</button>
+      <br />
+    </div>
+    <div id="guess-finger">
+      <input placeholder="enter guess" id="finger-input" />
+      <button onClick="checkGuess()">Guess how many fingers?</button>
+      <section id="guess-result"></section>
+    </div>
+    <div id="display-tweets"></div>
+    <div>
+      <select id="select-state" aria-placeholder="" onchange="showSelection()">
+        <option>--</option>
+        <option>West Bengal</option>
+        <option>Karnataka</option>
+        <option>Odisha</option>
+        <option>Bihar</option>
+        <option>Gujrath</option>
+      </select>
+      <p id="show-selected-item"></p>
+    </div>
+    <script>
+      const foodArray = ["Pizza", "Biryani", "Burger"];
+      function checkWord() {
+        let getRandomNumber = Math.floor(Math.random() * 3);
+        let userInput = document.getElementById("guess-input").value;
+        console.log(userInput, foodArray[getRandomNumber]);
+        if (userInput === foodArray[getRandomNumber]) {
+          alert(`You got the Food. Cheers!!`);
+        } else {
+          alert(`Nope you missed`);
+        }
+      }
+      function showSearchInput() {
+        let getInput = document.getElementById("enter-input").value;
+        console.log(getInput);
+        document.getElementById("search").innerHTML =
+          "Searched Word " + " <b>" + getInput + "</b>";
+      }
+      function checkGuess() {
+        const userGuess = document.getElementById("finger-input").value;
+        const getRoboNumber = Math.floor(Math.random() * 6);
+        let displayOutput = document.getElementById("guess-result");
+        console.log(getRoboNumber, userGuess);
+        if (parseInt(userGuess) === getRoboNumber) {
+          displayOutput.innerHTML = `You got the number Yee!!`;
+        } else {
+          displayOutput.innerHTML = `Nope incorrect :(`;
+        }
+      }
+      (function showTweets() {
+        let getElement = document.getElementById("display-tweets");
+        const tweets = ["Good Morning Developers", "How are you all"];
+        let tweetStr = "";
+        for (let tweet of tweets) tweetStr += "<li>" + tweet + "</li>";
+        getElement.innerHTML = "<ul>" + tweetStr + "</ul>";
+      })();
+      function showSelection() {
+        let getElement = document.getElementById("show-selected-item");
+        let getItem = document.getElementById("select-state").value;
+        getElement.innerHTML =
+          "You state is <span style='color: green;'> <b>" +
+          getItem +
+          "</b> </span>";
+      }
+    </script>
+  </body>
+</html>
