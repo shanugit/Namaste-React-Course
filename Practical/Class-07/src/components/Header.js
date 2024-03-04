@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { Title } from "./Title";
 
 export const Header = () => {
+  let [loginFlag, setLoginFlag] = useState("false");
   return (
     <div id="header">
       <Title />
@@ -12,6 +14,13 @@ export const Header = () => {
           <li id="contactus">Contact Us</li>
         </ul>
       </div>
+      {loginFlag === "false" ? (
+        <button id="login" onClick={setLoginFlag("true")}>
+          Login
+        </button>
+      ) : (
+        <button>Logout</button>
+      )}
     </div>
   );
 };

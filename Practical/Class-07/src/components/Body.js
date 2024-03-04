@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import { RestaurantCard } from "./RestaurentCard";
 import { restaurantList } from "../ConfigFile";
+import { AboutMe } from "./AboutMe";
+import Shimmer from "./Shimmer";
 
 function getFilterData(searchInput, setDisplayList, restaurant) {
   let data =
     searchInput.length != null
       ? restaurant.filter((item) =>
-          item.info.name.includes(searchInput.toString().trim())
+          item.info.name.toLowerCase().includes(searchInput.toString().trim())
         )
       : restaurant;
   console.log("see ", data);
@@ -28,7 +30,7 @@ async function callAPI(setRestaurants) {
 
 export const Body = () => {
   let [searchInput, setSearchInput] = useState("");
-  let [restaurant, setRestaurants] = useState(restaurantList);
+  let [restaurant, setRestaurants] = useState([]);
   let [displayList, setDisplayList] = useState(restaurantList);
   /**
    * This hook is usefull when we want to execure some API call
@@ -45,8 +47,10 @@ export const Body = () => {
     console.log("Called 2");
     getFilterData(searchInput, setDisplayList, restaurant);
   }, [searchInput]);
-  return (
-    <>
+  return restaurant.length == 0 ? (
+    <Shimmer />
+  ) : (
+    <div id="body-content">
       <div id="input-box">
         <input
           id="get-input"
@@ -70,6 +74,7 @@ export const Body = () => {
           return <RestaurantCard {...items.info} key={items.info.id} />;
         })}
       </div>
-    </>
+      <AboutMe />
+    </div>
   );
 };
