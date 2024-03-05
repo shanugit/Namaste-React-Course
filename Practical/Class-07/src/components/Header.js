@@ -3,6 +3,10 @@ import { Title } from "./Title";
 
 export const Header = () => {
   let [loginFlag, setLoginFlag] = useState("false");
+  function setFlag() {
+    if (loginFlag === "false") setLoginFlag("true");
+    else setLoginFlag("false");
+  }
   return (
     <div id="header">
       <Title />
@@ -14,12 +18,24 @@ export const Header = () => {
           <li id="contactus">Contact Us</li>
         </ul>
       </div>
-      {loginFlag === "false" ? (
-        <button id="login" onClick={setLoginFlag("true")}>
+      {console.log(loginFlag)}
+      {loginFlag == "false" ? (
+        <button
+          id="login"
+          onClick={() => {
+            setFlag();
+          }}
+        >
           Login
         </button>
       ) : (
-        <button>Logout</button>
+        <button
+          onClick={() => {
+            setFlag();
+          }}
+        >
+          Logout
+        </button>
       )}
     </div>
   );
