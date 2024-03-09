@@ -1,5 +1,5 @@
 body {
-  background-color: antiquewhite;
+  background-color: bisque;
 }
 
 #todo-app {
@@ -8,7 +8,8 @@ body {
   border: 1px solid black;
   height: 700px;
   width: 700px;
-  background-color: lightcoral;
+  background-color: #33cccc;
+  border-radius: 15px;
 }
 
 #add-task {
@@ -17,11 +18,37 @@ body {
 }
 
 #input-box {
-  height: 20px;
-  width: 300px;
+  height: 30px;
+  width: 412px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 #add-btn {
+  height: 35.2px;
+  width: 80px;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+#task {
+  background-color: white;
+  padding: 5px;
+  margin-left: 70px;
+  margin-top: 5px;
   height: 25px;
-  width: 70px;
+  width: 70%;
+  border-radius: 1px solid black;
+  border-radius: 7px;
+}
+#task:hover {
+  color: green;
+  text-decoration: line-through;
+}
+
+#welcome-user {
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 30px;
+  color: white;
 }

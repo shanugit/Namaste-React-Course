@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body onload="welcomeMsg()">
+    <script>
+      function removeTask(id) {
+        const tasks = document
+          .getElementsByTagName("span")
+          .console.log(id, tasks);
+      }
+      function welcomeMsg() {
+        const time = new Date().toDateString();
+        document.getElementById(
+          "welcome-user"
+        ).innerHTML = `Welcome Suman - ${time}`;
+      }
+      function addTask() {
+        let getInput = document.getElementById("input-box").value;
+        document.getElementById("input-box").value = "";
+        let getPrevItems = document
+          .getElementById("display-tasks")
+          .getElementsByTagName("div");
+        let arr = [];
+        console.log(getPrevItems);
+        if (getInput.trim() === "") return;
+        for (let i = 0; i < getPrevItems.length; i++) {
+          let id = "task" + i;
+          arr.push(
+            `<div id="task"><input type="radio" /><span id=${id} onClick="removeTask(${id})">${getPrevItems[i].textContent}</span></div>`
+          );
+        }
+        let id = "task" + arr.length;
+        arr.push(
+          `<div id ="task"><input type="radio" /><span id=${id} onClick="removeTask(${id})">${getInput}</span></div>`
+        );
+        document.getElementById("display-tasks").innerHTML = arr.join("");
+      }
+    </script>
+    <div id="todo-app">
+      <div id="add-task">
+        <h2 id="welcome-user"></h2>
+        <input id="input-box" placeholder="Add task here..." /><button
+          id="add-btn"
+          onClick="addTask()"
+        >
+          Add Tasks
+        </button>
+      </div>
+      <div id="display-tasks"></div>
+    </div>
+  </body>
+</html>

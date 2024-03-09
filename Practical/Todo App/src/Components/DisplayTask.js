@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
 
 const DisplayTask = () => {
-  let [tasks, setTasks] = useState([]);
+  let [tasks, setTasks] = useState(["Laddu"]);
   const addItemInList = (inputs) => {
     let input = inputs.trim();
     let t = tasks;
@@ -9,13 +10,12 @@ const DisplayTask = () => {
     console.log(tasks, inputs);
     if (t.length > 0) setTasks(t);
   };
-  //   useEffect(() => {
-  //     //   helper(input);
-  //   }, [tasks]);
+  useEffect(() => {
+    console.log("Use Effect");
+  });
   console.log("render");
-  //   if (tasks.length === 0) return <>...</>;
   return (
-    <div>
+    <div id="todo-app">
       <div id="add-task">
         <input id="input-box" placeholder="Add task here..." />
         <button
@@ -29,11 +29,12 @@ const DisplayTask = () => {
         </button>
       </div>
       <div id="display-task">
-        <ul>
-          {tasks.map((item, index) => (
-            <li key={index}>{item.trim()}</li>
+        <ol>
+          {/* {console.log(tasks)} */}
+          {tasks.map((item) => (
+            <li>{item}</li>
           ))}
-        </ul>
+        </ol>
       </div>
     </div>
   );
