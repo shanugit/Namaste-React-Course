@@ -10,8 +10,18 @@
     <script>
       function removeTask(id) {
         const tasks = document
-          .getElementsByTagName("span")
-          .console.log(id, tasks);
+          .getElementById("display-tasks")
+          .getElementsByTagName("div");
+        let arr = [];
+        for (let i = 0; i < tasks.length; i++) {
+          if (tasks[i].textContent != id.textContent) {
+            let id = "task" + i;
+            arr.push(
+              `<div id="task"><input type="radio" /><span id=${id} onClick="removeTask(${id})">${tasks[i].textContent}</span></div>`
+            );
+          }
+        }
+        document.getElementById("display-tasks").innerHTML = arr.join("");
       }
       function welcomeMsg() {
         const time = new Date().toDateString();
@@ -26,7 +36,7 @@
           .getElementById("display-tasks")
           .getElementsByTagName("div");
         let arr = [];
-        console.log(getPrevItems);
+        // console.log(getPrevItems);
         if (getInput.trim() === "") return;
         for (let i = 0; i < getPrevItems.length; i++) {
           let id = "task" + i;
