@@ -18,7 +18,6 @@ export const Header = () => {
           <li id="contactus">Contact Us</li>
         </ul>
       </div>
-      {console.log(loginFlag)}
       {loginFlag == "false" ? (
         <button
           id="login"

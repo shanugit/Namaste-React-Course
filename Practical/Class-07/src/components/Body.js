@@ -4,34 +4,19 @@ import { restaurantList } from "../ConfigFile";
 import { AboutMe } from "./AboutMe";
 import Shimmer from "./Shimmer";
 
-function getFilterData(searchInput, setDisplayList, restaurant) {
-  let data =
-    searchInput.length != null
-      ? restaurant.filter((item) =>
-          item.info.name.toLowerCase().includes(searchInput.toString().trim())
-        )
-      : restaurant;
-  console.log("see ", data);
-  setDisplayList(data);
-}
-
-async function callAPI(setRestaurants) {
-  const url =
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.95035448179743&lng=77.71346133202313&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-  const data = await fetch(url);
-  const jsonData = await data.json();
-  const list =
-    jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
-  console.log(
-    jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
-  );
-  setRestaurants(list);
+function getFilterData(searchInput, allRestaurant) {
+  console.log(allRestaurant.length);
+  return searchInput.length > 0
+    ? allRestaurant.filter((item) =>
+        item.info.name.toLowerCase().includes(searchInput.toString().trim())
+      )
+    : [];
 }
 
 export const Body = () => {
+  let [allRestaurant, setAllRestaurants] = useState([]);
+  let [filteredRestaurent, setFilteredRestaurent] = useState([]);
   let [searchInput, setSearchInput] = useState("");
-  let [restaurant, setRestaurants] = useState([]);
-  let [displayList, setDisplayList] = useState(restaurantList);
   /**
    * This hook is usefull when we want to execure some API call
    * which we to call when we want.
@@ -40,14 +25,29 @@ export const Body = () => {
    * based one that specific variable change the callback function will be called.
    */
   useEffect(() => {
-    callAPI(setRestaurants);
+    getRestaurents();
   }, []);
 
-  useEffect(() => {
-    console.log("Called 2");
-    getFilterData(searchInput, setDisplayList, restaurant);
-  }, [searchInput]);
-  return restaurant.length == 0 ? (
+  async function getRestaurents() {
+    const url =
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.95035448179743&lng=77.71346133202313&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+    const data = await fetch(url);
+    const jsonData = await data.json();
+    const list =
+      jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
+    // console.log(
+    //   jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    // );
+    setAllRestaurants(list);
+    setFilteredRestaurent(list);
+  }
+
+  /**
+   * Conditional rendering
+   * If we dont have restaurents, load shimmer UI
+   * Once data came from API call, update UI with proper list
+   */
+  return filteredRestaurent.length == 0 ? (
     <Shimmer />
   ) : (
     <div id="body-content">
@@ -63,14 +63,15 @@ export const Body = () => {
         <button
           id="search-btn"
           onClick={() => {
-            getFilterData(searchInput, setDisplayList, restaurant);
+            const data = getFilterData(searchInput, allRestaurant);
+            setFilteredRestaurent(data);
           }}
         >
           Search food
         </button>
       </div>
       <div id="restaurant-list">
-        {displayList.map((items) => {
+        {filteredRestaurent.map((items) => {
           return <RestaurantCard {...items.info} key={items.info.id} />;
         })}
       </div>
