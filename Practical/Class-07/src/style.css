@@ -68,9 +68,22 @@
 
 #shimmer-card {
   width: 200px;
-  height: 200px;
+  height: 250px;
   background-color: lightgrey;
-  margin: 20px;
-  /* display: flex;
-  flex-direction: row; */
+  margin: 10px;
+  background: linear-gradient(
+    120deg,
+    rgba(192, 192, 190, 0.2) 30%,
+    rgba(244, 244, 242, 0.2) 50%,
+    rgba(217, 216, 217, 0.2) 80%
+  );
+  animation: shimmer 2s infinite linear;
+}
+
+#testid {
+  /* width: 200px;
+  height: 200px; */
+  /* background-color: lightgrey;
+  margin: 20px; */
+  display: flex;
 }

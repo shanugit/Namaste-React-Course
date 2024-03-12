@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { RestaurantCard } from "./RestaurentCard";
-import { restaurantList } from "../ConfigFile";
 import { AboutMe } from "./AboutMe";
 import Shimmer from "./Shimmer";
 
