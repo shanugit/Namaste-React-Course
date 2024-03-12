@@ -41,6 +41,10 @@
   margin: 5px;
 }
 
+#aboutMe {
+  margin-top: 100px;
+}
+
 #card > img {
   width: 100%;
 }
@@ -60,4 +64,13 @@
 
 #search-btn {
   background-color: cornflowerblue;
+}
+
+#shimmer-card {
+  width: 200px;
+  height: 200px;
+  background-color: lightgrey;
+  margin: 20px;
+  /* display: flex;
+  flex-direction: row; */
 }
