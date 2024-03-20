@@ -13,8 +13,10 @@
 
 #contactus-component {
   height: 520px;
-  width: 100%;
-  background-color: rgb(76, 215, 138);
+  width: 90%;
+  background-color: lightgray;
+  padding: 5%;
+  text-align: center;
 }
 
 #footer-component {
@@ -70,7 +72,34 @@
   text-align: center;
 }
 
-#display-contactme {
-  padding: 15%;
-  text-align: center;
+#mail-id {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+#mail-id-input {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+#mail-purpuse {
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 50%;
+}
+
+#mail-purpuse-input {
+  height: 300px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+#submit-form {
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: chartreuse;
 }

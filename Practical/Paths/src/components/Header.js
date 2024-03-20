@@ -8,7 +8,7 @@ const Header = () => {
         alt="logo"
         id="logo"
       />
-      <h2 id="kitchen-name">Suman Das, Software Developer</h2>
+      <h2 id="kitchen-name">Suman - Software Developer</h2>
       <div id="nav-items">
         <ul>
           <li>
