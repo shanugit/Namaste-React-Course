@@ -1,7 +1,12 @@
-export const AboutMe = () => {
+const AboutMe = () => {
   return (
-    <div id="aboutMe">
-      <h2>Hello There, I am Suman, A software Developer</h2>
+    <div id="about-me">
+      <div id="display-aboutme">
+        About me - I am Suman Das, a software developer, trying to be best at
+        what I do
+      </div>
     </div>
   );
 };
+
+export default AboutMe;

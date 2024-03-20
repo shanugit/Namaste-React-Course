@@ -34,7 +34,7 @@
 
 #card {
   background-color: azure;
-  width: 150px;
+  width: 170px;
   height: 300px;
   border: 1px solid black;
   padding: 10px;
@@ -81,9 +81,59 @@
 }
 
 #testid {
-  /* width: 200px;
-  height: 200px; */
-  /* background-color: lightgrey;
-  margin: 20px; */
   display: flex;
+}
+
+#about-me {
+  height: 520px;
+  width: 100%;
+  background-color: rgb(227, 192, 120);
+}
+#display-aboutme {
+  padding: 15%;
+  text-align: center;
+}
+
+#contactus-component {
+  height: 520px;
+  width: 90%;
+  background-color: lightgray;
+  padding: 5%;
+  text-align: center;
+}
+#mail-id {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+#mail-id-input {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+#mail-purpuse {
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 50%;
+}
+
+#mail-purpuse-input {
+  height: 300px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+#submit-form {
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: chartreuse;
+}
+
+#footer-item {
+  padding: 5%;
+  margin: 5%;
 }
