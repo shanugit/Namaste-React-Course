@@ -137,3 +137,58 @@
   padding: 5%;
   margin: 5%;
 }
+
+#login-form {
+  background-color: rgb(178, 240, 220);
+  height: 500px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+#name {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  padding-top: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+}
+#name-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#password {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  margin-left: 15.7%;
+  margin-right: 15%;
+}
+#password-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#login-btn {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 30px;
+  width: 64px;
+  color: aliceblue;
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-top: 40px;
+  list-style-type: none;
+}
+#link-id {
+  color: white;
+  text-decoration: none;
+  margin-left: -14px;
+  padding-top: 10px;
+}
