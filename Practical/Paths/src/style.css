@@ -1,0 +1,105 @@
+#header-component {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: rgb(243, 52, 52);
+}
+
+#body-component {
+  height: 520px;
+  width: 100%;
+  background-color: rgb(37, 179, 179);
+}
+
+#contactus-component {
+  height: 520px;
+  width: 90%;
+  background-color: lightgray;
+  padding: 5%;
+  text-align: center;
+}
+
+#footer-component {
+  height: 100px;
+  width: 100%;
+  background-color: rgb(115, 57, 57);
+}
+
+#logo {
+  height: 100px;
+  width: 150px;
+}
+
+#kitchen-name {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+#nav-items > ul > li {
+  margin: 5px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+#nav-items > ul > li:hover {
+  text-decoration: underline;
+  color: aqua;
+}
+
+#display-body {
+  padding: 15%;
+  text-align: center;
+}
+
+#about-me {
+  height: 520px;
+  width: 100%;
+  background-color: rgb(227, 192, 120);
+}
+
+#display-aboutme {
+  padding: 15%;
+  text-align: center;
+}
+#display-footer {
+  padding: 2%;
+  text-align: center;
+}
+
+#mail-id {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+#mail-id-input {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+#mail-purpuse {
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 50%;
+}
+
+#mail-purpuse-input {
+  height: 300px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+#submit-form {
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: chartreuse;
+}

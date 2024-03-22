@@ -34,7 +34,7 @@
 
 #card {
   background-color: azure;
-  width: 150px;
+  width: 170px;
   height: 300px;
   border: 1px solid black;
   padding: 10px;
@@ -81,9 +81,114 @@
 }
 
 #testid {
-  /* width: 200px;
-  height: 200px; */
-  /* background-color: lightgrey;
-  margin: 20px; */
   display: flex;
+}
+
+#about-me {
+  height: 520px;
+  width: 100%;
+  background-color: rgb(227, 192, 120);
+}
+#display-aboutme {
+  padding: 15%;
+  text-align: center;
+}
+
+#contactus-component {
+  height: 520px;
+  width: 90%;
+  background-color: lightgray;
+  padding: 5%;
+  text-align: center;
+}
+#mail-id {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+#mail-id-input {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+#mail-purpuse {
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 50%;
+}
+
+#mail-purpuse-input {
+  height: 300px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+#submit-form {
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: chartreuse;
+}
+
+#footer-item {
+  padding: 5%;
+  margin: 5%;
+}
+
+#login-form {
+  background-color: rgb(178, 240, 220);
+  height: 500px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+#name {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  padding-top: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+}
+#name-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#password {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  margin-left: 15.7%;
+  margin-right: 15%;
+}
+#password-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#login-btn {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 30px;
+  width: 64px;
+  color: aliceblue;
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-top: 40px;
+  list-style-type: none;
+}
+#link-id {
+  color: white;
+  text-decoration: none;
+  margin-left: -14px;
+  padding-top: 10px;
 }

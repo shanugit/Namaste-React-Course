@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Title } from "./Title";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   let [loginFlag, setLoginFlag] = useState("false");
@@ -13,9 +14,15 @@ export const Header = () => {
       <h1>Chuku's Kitchen</h1>
       <div id="nav-items">
         <ul>
-          <li id="home">Home</li>
-          <li id="aboutme">About me</li>
-          <li id="contactus">Contact Us</li>
+          <li id="home">
+            <Link to="/">Home</Link>
+          </li>
+          <li id="aboutme">
+            <Link to="/aboutme">About Me</Link>
+          </li>
+          <li id="contactus">
+            <Link to="/contactme">Contact Me</Link>
+          </li>
         </ul>
       </div>
       {loginFlag == "false" ? (

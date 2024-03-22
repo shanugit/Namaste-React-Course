@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { RestaurantCard } from "./RestaurentCard";
-import { AboutMe } from "./AboutMe";
 import Shimmer from "./Shimmer";
+import { LIST_URL } from "../ConfigFile";
+import { Link } from "react-router-dom";
 
 function getFilterData(searchInput, allRestaurant) {
   console.log(allRestaurant.length);
@@ -28,9 +29,7 @@ export const Body = () => {
   }, []);
 
   async function getRestaurents() {
-    const url =
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.95035448179743&lng=77.71346133202313&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
-    const data = await fetch(url);
+    const data = await fetch(LIST_URL);
     const jsonData = await data.json();
     const list =
       jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants;
@@ -63,7 +62,11 @@ export const Body = () => {
           id="search-btn"
           onClick={() => {
             const data = getFilterData(searchInput, allRestaurant);
-            setFilteredRestaurent(data);
+            if (searchInput.length > 0) {
+              setFilteredRestaurent(data);
+            } else {
+              setFilteredRestaurent(allRestaurant);
+            }
           }}
         >
           Search food
@@ -71,10 +74,13 @@ export const Body = () => {
       </div>
       <div id="restaurant-list">
         {filteredRestaurent.map((items) => {
-          return <RestaurantCard {...items.info} key={items.info.id} />;
+          return (
+            <Link to={"/restaurent/" + items?.info?.id} key={items.info.id}>
+              <RestaurantCard {...items.info} />
+            </Link>
+          );
         })}
       </div>
-      <AboutMe />
     </div>
   );
 };

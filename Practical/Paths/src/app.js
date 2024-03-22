@@ -1,14 +1,12 @@
-import React from "react";
+import react from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import { Body } from "./components/Body";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 import Error from "./components/Error";
 import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
-import RestaurentMenu from "./components/RestaurentMenu";
-import LoginForm from "./components/LoginForm";
 
 const AppLayout = () => {
   return (
@@ -35,16 +33,8 @@ const appRouter = createBrowserRouter([
         element: <AboutMe />,
       },
       {
-        path: "/contactme",
+        path: "/contactus",
         element: <ContactMe />,
-      },
-      {
-        path: "/restaurent/:id",
-        element: <RestaurentMenu />,
-      },
-      {
-        path: "/login",
-        element: <LoginForm />,
       },
     ],
   },
