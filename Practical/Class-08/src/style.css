@@ -1,0 +1,219 @@
+#main-page {
+  width: 100%;
+}
+#header {
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  border: 1px solid black;
+  background-color: cadetblue;
+  border-radius: 15px;
+}
+
+#nav-items {
+  display: flex;
+  font-weight: bold;
+  list-style-type: none;
+}
+
+#nav-items > ul {
+  list-style-type: none;
+  display: flex;
+  font-weight: bold;
+}
+
+#nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+
+#nav-items > ul > li:hover {
+  text-decoration: underline;
+  color: brown;
+}
+
+#logo {
+  border-radius: 15px;
+  width: 100px;
+  height: 101px;
+}
+
+#card {
+  background-color: azure;
+  width: 170px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+}
+#card:hover {
+  transform: translate3D(0, -1px, 0) scale(1.03);
+}
+
+#aboutMe {
+  margin-top: 100px;
+}
+
+#card > img {
+  width: 100%;
+}
+
+#restaurant-list {
+  display: flex;
+}
+
+#body-content {
+  width: 100%;
+}
+
+#input-box {
+  padding-left: 10px;
+}
+
+#get-input {
+  height: 30px;
+  width: 300px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: beige;
+}
+
+#search-btn {
+  height: 35px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: cornflowerblue;
+}
+
+#shimmer-card {
+  width: 200px;
+  height: 250px;
+  background-color: lightgrey;
+  margin: 10px;
+  background: linear-gradient(
+    120deg,
+    rgba(192, 192, 190, 0.2) 30%,
+    rgba(244, 244, 242, 0.2) 50%,
+    rgba(217, 216, 217, 0.2) 80%
+  );
+  animation: shimmer 2s infinite linear;
+}
+
+#testid {
+  display: flex;
+}
+
+#about-me {
+  height: 520px;
+  width: 100%;
+  background-color: rgb(227, 192, 120);
+}
+#display-aboutme {
+  padding: 15%;
+  text-align: center;
+}
+
+#contactus-component {
+  height: 520px;
+  width: 90%;
+  background-color: lightgray;
+  padding: 5%;
+  text-align: center;
+}
+#mail-id {
+  color: blueviolet;
+  font-weight: bold;
+}
+
+#mail-id-input {
+  height: 30px;
+  width: 500px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+#mail-purpuse {
+  color: blueviolet;
+  font-weight: bold;
+  margin-bottom: 50%;
+}
+
+#mail-purpuse-input {
+  height: 300px;
+  width: 500px;
+  border-radius: 15px;
+}
+
+#submit-form {
+  height: 30px;
+  width: 100px;
+  margin-top: 10px;
+  border-radius: 15px;
+  background-color: chartreuse;
+}
+
+#footer-item {
+  text-align: center;
+  height: 90px;
+  width: 100%;
+  border-radius: 15px;
+  background-color: cadetblue;
+  padding: 15px;
+  margin-top: 25px;
+}
+
+#login-form {
+  background-color: rgb(178, 240, 220);
+  height: 500px;
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 50px;
+}
+
+#name {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  padding-top: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+}
+#name-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#password {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: brown;
+  font-weight: bolder;
+  margin-left: 15.7%;
+  margin-right: 15%;
+}
+#password-input {
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+}
+#login-btn {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 30px;
+  width: 64px;
+  color: aliceblue;
+  background-color: blueviolet;
+  border-radius: 10px;
+  margin-left: 20%;
+  margin-top: 40px;
+  list-style-type: none;
+}
+#link-id {
+  color: white;
+  text-decoration: none;
+  margin-left: -14px;
+  padding-top: 10px;
+}
