@@ -9,7 +9,8 @@ import AboutMe from "./components/AboutMe";
 import ContactMe from "./components/ContactMe";
 import RestaurentMenu from "./components/RestaurentMenu";
 import LoginForm from "./components/LoginForm";
-// import Profile from "./components/Profile";
+import Profile from "./components/ProfileClass";
+import AboutMe2 from "./components/AboutMe";
 
 const AppLayout = () => {
   return (
@@ -33,12 +34,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/aboutme",
-        element: <AboutMe />,
+        element: <AboutMe2 />,
         children: [
-          // {
-          //   path: "profile",
-          //   element: <Profile />,
-          // },
+          {
+            path: "profile",
+            element: <Profile />,
+          },
         ],
       },
       {
