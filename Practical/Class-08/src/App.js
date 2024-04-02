@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Body } from "./components/Body";
@@ -11,6 +11,11 @@ import RestaurentMenu from "./components/RestaurentMenu";
 import LoginForm from "./components/LoginForm";
 import Profile from "./components/ProfileClass";
 import AboutMe2 from "./components/AboutMe";
+import Shimmer from "./components/Shimmer";
+//import Instamart from "./components/Instamart";
+
+// on demand loading or lazy loading
+const Instamart = lazy(() => import("./components/Instamart"));
 
 const AppLayout = () => {
   return (
@@ -53,6 +58,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/login",
         element: <LoginForm />,
+      },
+      {
+        path: "/instamart",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <Instamart />
+          </Suspense>
+        ),
       },
     ],
   },

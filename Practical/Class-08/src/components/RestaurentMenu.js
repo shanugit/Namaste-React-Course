@@ -2,23 +2,12 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { LIST_URL, IMG_CDN_URL } from "../ConfigFile";
 import Shimmer from "./Shimmer";
+import useRestaurant from "../utils/useRestaurant";
 
 const RestaurentMenu = () => {
   let { id } = useParams();
-  let [restaurent, setRestaurent] = useState([]);
-  useEffect(() => {
-    getRestaurents();
-  }, []);
-  async function getRestaurents() {
-    const data = await fetch(LIST_URL);
-    const jsonData = await data.json();
-    let d =
-      jsonData.data.cards[1].card.card.gridElements.infoWithStyle.restaurants.filter(
-        (item) => item?.info?.id == id
-      );
-    setRestaurent(d);
-  }
-  return restaurent.length == 0 ? (
+  const restaurent = useRestaurant(id);
+  return !restaurent ? (
     <Shimmer />
   ) : (
     <div>

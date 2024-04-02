@@ -3,6 +3,7 @@ import { RestaurantCard } from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import { LIST_URL } from "../ConfigFile";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/isOnline";
 
 function getFilterData(searchInput, allRestaurant) {
   console.log(allRestaurant.length);
@@ -28,6 +29,10 @@ export const Body = () => {
     getRestaurents();
   }, []);
 
+  const isOnline = useOnline();
+  if (!isOnline) {
+    return <div>You are offline!!</div>;
+  }
   async function getRestaurents() {
     const data = await fetch(LIST_URL);
     const jsonData = await data.json();

@@ -3,7 +3,7 @@ const Shimmer = () => {
     <div id="testid">
       {new Array(20).fill("").map((item, index) => {
         return (
-          <div id="shimmer-card">
+          <div id="shimmer-card" key={index}>
             <img></img>
             <p></p>
             <p></p>
