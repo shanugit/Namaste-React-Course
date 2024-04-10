@@ -53,7 +53,7 @@ export const Body = () => {
     <>
       <div className="p-5 my-2 bg-pink-300 rounded-lg">
         <input
-          className="p-2 rounded-s-lg"
+          className="ml-96 p-2 h-10 w-72 rounded-s-lg"
           placeholder="search here"
           value={searchInput}
           onChange={(e) => {
@@ -61,7 +61,7 @@ export const Body = () => {
           }}
         ></input>
         <button
-          className="p-2 bg-purple-700 rounded-e-lg text-white hover:bg-purple-900"
+          className="h-10 w-28 bg-purple-700 rounded-e-lg text-white hover:bg-purple-900"
           onClick={() => {
             const data = getFilterData(searchInput, allRestaurant);
             if (searchInput.length > 0) {
