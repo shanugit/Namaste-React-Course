@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { RestaurantCard } from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import { LIST_URL } from "../ConfigFile";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/isOnline";
+import UserContext from "../utils/UserContext";
 
 function getFilterData(searchInput, allRestaurant) {
   console.log(allRestaurant.length);
@@ -18,6 +19,7 @@ export const Body = () => {
   let [allRestaurant, setAllRestaurants] = useState([]);
   let [filteredRestaurent, setFilteredRestaurent] = useState([]);
   let [searchInput, setSearchInput] = useState("");
+  let { user, setUser } = useContext(UserContext);
   /**
    * This hook is usefull when we want to execure some API call
    * which we to call when we want.
@@ -73,6 +75,15 @@ export const Body = () => {
         >
           Search food
         </button>
+        <input
+          value={user.name}
+          onChange={(e) => {
+            setUser({
+              name: e.target.value,
+              mail: "new@mail.com",
+            });
+          }}
+        />
       </div>
       <div className="flex flex-wrap">
         {filteredRestaurent.map((items) => {

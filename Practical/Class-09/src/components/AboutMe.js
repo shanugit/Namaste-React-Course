@@ -1,6 +1,7 @@
 import React from "react";
 import ProfileClass from "./ProfileClass";
 import Profile from "./Profile";
+import UserContext from "../utils/UserContext";
 
 const AboutMe = () => {
   return (
@@ -26,6 +27,13 @@ class AboutMe2 extends React.Component {
   render() {
     return (
       <div id="about-me">
+        <UserContext.Consumer>
+          {({ user }) => {
+            <h3>
+              {user.name} - {user.mail}
+            </h3>;
+          }}
+        </UserContext.Consumer>
         <Profile name={"Suman Das"} />
         <ProfileClass name={"Suman"} />
         <div id="display-aboutme">

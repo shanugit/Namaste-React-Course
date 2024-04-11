@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-const userContext = createContext({
+const UserContext = createContext({
   user: {
     name: "Dummy",
     mail: "Dummy@gmail.com",
   },
 });
 
-export default userContext;
+export default UserContext;

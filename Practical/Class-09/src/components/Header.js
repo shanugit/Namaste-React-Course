@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Title } from "./Title";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/isOnline";
-import userContext from "../utils/UserContext";
+import UserContext from "../utils/UserContext";
 
 export const Header = () => {
   let [loginFlag, setLoginFlag] = useState("false");
@@ -12,7 +12,7 @@ export const Header = () => {
   }
   const isOnline = useOnline();
 
-  const user = useContext(userContext);
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-pink-300 shadow-lg rounded-lg">
@@ -48,14 +48,17 @@ export const Header = () => {
           Login
         </button>
       ) : (
-        <button
-          onClick={() => {
-            setFlag();
-          }}
-          className="bg-purple-800 rounded-lg w-11 text-white"
-        >
-          Logout
-        </button>
+        <>
+          <span className="p-10 font-bold text-red-900">{user.name}</span>
+          <button
+            onClick={() => {
+              setFlag();
+            }}
+            className="bg-purple-800 rounded-lg w-11 text-white"
+          >
+            Logout
+          </button>
+        </>
       )}
     </div>
   );
