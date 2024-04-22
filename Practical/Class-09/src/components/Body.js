@@ -79,8 +79,17 @@ export const Body = () => {
           value={user.name}
           onChange={(e) => {
             setUser({
+              ...user,
               name: e.target.value,
-              mail: "new@mail.com",
+            });
+          }}
+        />
+        <input
+          value={user.mail}
+          onChange={(e) => {
+            setUser({
+              ...user,
+              mail: e.target.value,
             });
           }}
         />

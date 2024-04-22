@@ -29,9 +29,11 @@ class AboutMe2 extends React.Component {
       <div id="about-me">
         <UserContext.Consumer>
           {({ user }) => {
-            <h3>
-              {user.name} - {user.mail}
-            </h3>;
+            return (
+              <h2>
+                {user.name} - {user.mail}
+              </h2>
+            );
           }}
         </UserContext.Consumer>
         <Profile name={"Suman Das"} />
