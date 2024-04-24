@@ -13,6 +13,9 @@ import AboutMe2 from "./components/AboutMe";
 import Shimmer from "./components/Shimmer";
 //import Instamart from "./components/Instamart";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 // on demand loading or lazy loading
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -23,13 +26,13 @@ const AppLayout = () => {
     mail: "suman@mail.com",
   });
   return (
-    <>
+    <Provider store={store}>
       <UserContext.Provider value={{ user, setUser }}>
         <Header />
         <Outlet />
         <Footer />
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 
@@ -72,6 +75,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
